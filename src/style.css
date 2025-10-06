@@ -1,0 +1,251 @@
+/*========== Poppins Font ==========*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    /*========== Colors ==========*/
+    --color-primary: #3B82F6;
+
+    --color-bg: #0D0D0F;
+    --color-card: #1E1F22;
+    --color-modal: #232428;
+    --color-input: #2C2D31;
+    --color-danger: #EF4444;
+
+    --color-text: #A1A1AA;
+    --color-white: #FFF;
+
+    /*========== Typography ==========*/
+    --font-sm: .75rem;
+    --font-base: 1rem;
+    --font-xl: 2rem;
+
+    --font-regular: 400;
+    --font-semibold: 600;
+
+    /*========== Layout ==========*/
+    --nav-height: 3.5rem;
+
+    --breakpoint-sm: 390px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 1200px;
+    
+    --container-md: 576px;
+    --breakpoint-lg: 1024px;
+    --gutter: 1.5rem;
+}
+
+/*========== Base ==========*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, 
+ol {
+    list-style: none;
+}
+
+body {
+    margin: var(--nav-height) 0 0 0;
+    font-family: "Poppins", sans-serif;
+    font-size: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+}
+
+/*========== Components ==========*/
+.container {
+    max-width: var(--container-md);
+    margin-left: var(--gutter);
+    margin-right: var(--gutter);
+}
+
+.section {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+}
+
+.card {
+    background-color: var(--color-card);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+/*========== Header & NavBar ==========*/
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(4px);
+}
+
+.nav {
+    height: var(--nav-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav__logo {
+    display: flex;
+    gap: .25rem;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+}
+
+.nav__icon {
+    font-size: 1.25rem;
+}
+
+.nav__text {
+    font-size: var(--font-base);
+    font-weight: var(--font-semibold);
+}
+
+/*========== Overview ==========*/
+.overview__container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/*========== Total ==========*/
+.total {
+    text-align: center;
+    padding: 1rem 0;
+}
+
+.total__text {
+    font-size: var(--font-sm);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.total__number {
+    font-size: var(--font-xl);
+    color: var(--color-white);
+    font-weight: var(--font-semibold);
+}
+
+/*========== Graph ==========*/
+.overview__graph {
+    padding: 1rem 0 0 0;
+}
+
+.graph__list {
+    display: flex;
+    gap: .25rem;
+}
+
+.graph__item {
+    flex: 1;
+}
+
+.chartbar {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.bar {
+    height: 150px;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.bar__fill {
+    background-color: var(--color-primary);
+    border-radius: 1rem 1rem 0 0;
+}
+
+.bar__number {
+    font-size: .25rem;
+    text-align: center;
+}
+
+/*========== Expense List ==========*/
+.expense__list {
+    padding: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.expense__summary {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .5rem;
+}
+
+.expense__date,
+.expense__daily {
+    color: var(--color-white);
+    font-size: var(--font-base);
+    font-weight: var(--font-regular);
+}
+
+.expense__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .25rem;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.expense__item:hover {
+    color: var(--color-white);
+}
+
+.expense__titles {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.expense__category {
+    padding: .5rem;
+    background-color: #000;
+    border-radius: 5rem;
+
+}
+
+.expense__title {
+    font-weight: var(--font-regular);
+}
+
+/*========== Footer ==========*/
+.footer {
+    padding: 2rem 0;
+}
+
+.footer__container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer__author {
+    font-weight: var(--font-regular);
+}
+
+.footer__link {
+    margin-left: .5rem;
+    color: var(--color-primary);
+}
+
+@media screen and (min-width: 568px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
