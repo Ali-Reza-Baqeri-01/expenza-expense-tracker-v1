@@ -1,6 +1,6 @@
 import ExpenseList from "./ExpenseList";
 
-export default function expenses() {
+export default function Expenses() {
     return (
         <section className="section expenses">
             <div className="container expenses__conatainer">

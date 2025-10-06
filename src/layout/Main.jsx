@@ -1,5 +1,5 @@
 import Overview from "../components/overview/Overview";
-import Expenses from "../components/expense/expenses";
+import Expenses from "../components/expense/Expenses";
 
 export default function Main() {
   return (
