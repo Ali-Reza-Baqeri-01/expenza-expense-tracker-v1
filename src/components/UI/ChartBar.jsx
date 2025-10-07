@@ -1,8 +1,7 @@
 
-export default function ChartBar({ date, max, dailyTotals }) {
-    const day = +date.split('-')[2];
+export default function ChartBar({ day, max, amount }) {
 
-    const fillHeight = `${ (dailyTotals[day - 1] / max) * 100}%`;
+    const fillHeight = `${ ( amount / max) * 100}%`;
 
     return (
         <div className="chartbar">
@@ -12,7 +11,7 @@ export default function ChartBar({ date, max, dailyTotals }) {
             </div>
 
             <small className="bar__number">
-                {day}
+                {+day}
             </small>
         </div>
     )

@@ -1,4 +1,6 @@
-import { useState } from 'react'
+import { useState } from 'react';
+
+import { categories } from '../../data';
 
 export default function DropDown({ label }) {
 
@@ -9,10 +11,10 @@ export default function DropDown({ label }) {
 
             <label className="form__label" htmlFor={label}>{label}</label>
 
-            <select className="dropdown" id={label} value={value} onChange={(e) => setValue(e.target.value)}>
-                <option value="apple">Apple</option>
-                <option value="banana">Banana</option>
-                <option value="cherry">Cherry</option>
+            <select name={label} className="dropdown" id={label} value={value} onChange={(e) => setValue(e.target.value)}>
+                {categories.map(cat => (
+                    <option key={cat} value={cat}>{cat}</option>
+                ))}
             </select>
         </div>
     )

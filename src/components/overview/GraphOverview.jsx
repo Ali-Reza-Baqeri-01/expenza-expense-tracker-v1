@@ -1,23 +1,23 @@
+import { useApp } from "../../store/AppContext"; 
+
 import Card from "../UI/Card";
 import ChartBar from "../UI/ChartBar";
 
-import { expenses } from "../../data.js";
-
 export default function GraphOverview() {
 
-  const dailyTotals = expenses.map(d =>
-    d.expenses.reduce((sum, e) => sum + (e.amount || 0), 0)
-  );
+  const { getDailyAmount } = useApp();
 
-  const maxValue = Math.max(0, ...dailyTotals);
+  const items = getDailyAmount();
+
+  const maxValue = Math.max(...items.map(d => d.totalExpense));
 
   return (
     <Card>
       <div className="overview__graph">
         <ul className="graph__list">
-          {expenses.map(expense => (
-            <li key={expense.date} className="graph__item">
-              <ChartBar date={expense.date} max={maxValue} dailyTotals={dailyTotals}/>
+          {items.map( item => (
+            <li key={item.day} className="graph__item">
+              <ChartBar day={item.day} max={maxValue} amount={item.totalExpense}/>
             </li>
           ))}
         </ul>

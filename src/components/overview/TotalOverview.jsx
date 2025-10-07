@@ -1,13 +1,13 @@
-import Card from "../UI/Card";
 
-import { expenses } from "../../data";
+import { useApp } from "../../store/AppContext"; 
+
+import Card from "../UI/Card";
 
 export default function TotalOverview() {
 
-  const total = '€' + expenses.reduce(
-    (total, day) => total + day.expenses.reduce((s, e) => s + e.amount, 0),
-    0
-  ).toFixed(2);
+  const { getTotal } = useApp();
+
+  const total = getTotal();
 
   return (
     <Card>
@@ -17,7 +17,7 @@ export default function TotalOverview() {
         </small>
 
         <h2 className="total__number">
-          {total}
+          €{total}
         </h2>
       </div>
     </Card>

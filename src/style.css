@@ -252,6 +252,16 @@ body {
     font-weight: var(--font-regular);
 }
 
+.expense__more {
+    text-align: center;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.expense__more:hover {
+    color: var(--color-white);
+}
+
 /*========== Footer ==========*/
 .footer {
     padding: 2rem 0;
@@ -327,6 +337,7 @@ body {
     display: block;
     color: var(--color-white);
     margin-bottom: .5rem;
+    text-transform: capitalize;
 }
 
 .form__input {

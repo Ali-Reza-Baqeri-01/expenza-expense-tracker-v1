@@ -9,14 +9,14 @@ export default function AddExpense() {
     const [isOpen, setOpen] = useState(false);
 
     function toggleModal() {
-        setOpen( prev => !prev);
+        setOpen( prev => !prev );
     };
 
     return (
         <>
             <Backdrop isOpen={isOpen} onToggle={toggleModal}/>
             <Modal isOpen={isOpen} onToggle={toggleModal}>
-                <AddForm />
+                <AddForm onToggle={toggleModal} />
             </Modal>
             <ExpenseButton onToggle={toggleModal} />
         </>
