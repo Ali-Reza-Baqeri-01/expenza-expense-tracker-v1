@@ -300,7 +300,7 @@ body {
 
 .modal {
     position: fixed;
-    top: -50%;
+    top: -100%;
     left: 50%;
     min-width: 342px;
     transform: translate(-50%, -50%);
