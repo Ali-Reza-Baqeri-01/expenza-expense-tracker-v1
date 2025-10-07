@@ -28,7 +28,7 @@
     --breakpoint-sm: 390px;
     --breakpoint-md: 768px;
     --breakpoint-lg: 1200px;
-    
+
     --container-md: 576px;
     --breakpoint-lg: 1024px;
     --gutter: 1.5rem;
@@ -46,9 +46,22 @@ a {
     color: inherit;
 }
 
-ul, 
+ul,
 ol {
     list-style: none;
+}
+
+button,
+input,
+select {
+    border: none;
+    outline: none;
+    font-family: inherit;
+    color: inherit;
+}
+
+input {
+    width: 100%;
 }
 
 body {
@@ -75,6 +88,23 @@ body {
     background-color: var(--color-card);
     padding: 1rem;
     border-radius: 1rem;
+}
+
+.button {
+    padding: .75rem 1.25rem;
+    border-radius: .5rem;
+    font-weight: var(--font-semibold);
+    cursor: pointer;
+}
+
+.button__primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.button__danger {
+    background-color: var(--color-danger);
+    color: var(--color-white);
 }
 
 /*========== Header & NavBar ==========*/
@@ -242,6 +272,90 @@ body {
     margin-left: .5rem;
     color: var(--color-primary);
 }
+
+/*========== Add Expense ==========*/
+.add__button {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 5;
+}
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .3);
+    display: none;
+    z-index: 10;
+    transition: all .2s;
+}
+
+.open {
+    display: block;
+    /* visibility: hidden; */
+}
+
+.modal {
+    position: fixed;
+    top: -50%;
+    left: 50%;
+    min-width: 342px;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-modal);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    z-index: 100;
+    transition: all .5s;
+}
+
+.modal-open {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.add__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form__label {
+    display: block;
+    color: var(--color-white);
+    margin-bottom: .5rem;
+}
+
+.form__input {
+    background-color: var(--color-input);
+    padding: .75rem .5rem;
+    border-radius: .5rem;
+}
+
+.form__input[type="Date"]::-webkit-calendar-picker-indicator {
+    visibility: hidden;
+}
+
+.form__actions {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.form__actions .button__primary {
+    flex: 1;
+}
+
+.dropdown {
+    appearance: none;
+    width: 100%;
+    background-color: var(--color-input);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
 
 @media screen and (min-width: 568px) {
     .container {
